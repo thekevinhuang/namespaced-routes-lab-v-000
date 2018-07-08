@@ -15,6 +15,10 @@ class SongsController < ApplicationController
       end
     else
       @songs = Song.all
+
+      if p & p.song_sort_order == "DESC"
+        @songs.reverse!
+      end
     end
   end
 
